@@ -177,6 +177,17 @@ Route::get('/colorpage/{color}',function($color){
     return view('colorpage',compact('color'));
 });
 
+//TASK 23 - Route 1:Showing the FORM (GET)
+Route::get("/task-form",function(){
+    return view('taskform');
+});
+
+Route::post('/task-store',function(Illuminate\Http\Request $request){
+    $title=$request->input('title');
+    $description=$request->input('description');
+    return view('taskresult',compact('title','description'));
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
