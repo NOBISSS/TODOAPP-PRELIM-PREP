@@ -141,6 +141,17 @@ Route::get('/home',function(){
     return view('home');
 });
 
+//TASK 19 - Sum of First 10 Number
+
+Route::get('/sumten',function(){
+    $sum=0;
+    for($i=1;$i<=10;$i++){
+        $sum+=$i;
+    }
+    $numbers=range(1,10);
+    return view('sumten',compact('sum','numbers'));
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
