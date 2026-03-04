@@ -25,6 +25,14 @@
         nav a:hover { text-decoration: underline; }
 
         .content { padding: 24px; }
+
+        .page-banner {
+            background-color: #fef9c3;
+            border-left: 4px solid #f59e0b;
+            padding: 10px 20px;
+            font-size: 14px;
+            color: #92400e;
+        }
     </style>
     </head>
     <body>
@@ -36,7 +44,6 @@
             <a href="/multivars">Info</a>
         </nav>
         </div>
-
+{{-- TASK 8 --}}
+@stack('messages')
         <div class="content">
-        
-   

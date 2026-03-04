@@ -1,8 +1,11 @@
-<html>
-    <head>
-        <title>Compact() and with()</title>
-    </head>
-    <body>
+{{-- TASK 8 --}}
+
+@push('messages')
+    <div class="page-banner">
+        🎓 You are on the Student Information page!
+    </div>
+@endpush
+@include('partials.header')
         <h1>Student Information</h1>
         <table border="1" cellpadding="10">
             <tr>
@@ -26,5 +29,4 @@
                 <th>{{ $method }}</th>
             </tr>
         </table>
-    </body>
-</html>
+@include('partials.footer')
