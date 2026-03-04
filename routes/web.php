@@ -136,6 +136,11 @@ Route::get('/arraylist',function(){
     return view('arraylist',compact('fruits','students'));
 });
 
+//TASK 18 Master Layout Demo
+Route::get('/home',function(){
+    return view('home');
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
