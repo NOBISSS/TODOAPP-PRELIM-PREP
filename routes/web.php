@@ -203,6 +203,10 @@ Route::get('/task25',[TaskController::class,'create']);
 
 Route::post('/task25/store',[TaskController::class,'storeValidated']);
 
+//TASK 26
+Route::get('/task26',[TaskController::class,'showFlashForm']);
+Route::post('/task26/store',[TaskController::class,'storeFlash']);
+
 
 Route::get('/', function () {
     return view('welcome');

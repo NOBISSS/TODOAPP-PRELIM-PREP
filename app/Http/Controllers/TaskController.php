@@ -30,4 +30,21 @@ class TaskController extends Controller
 
         return view('task24result',compact('title','description'));
     }
+
+    //TASK 26
+    public function showFlashForm()
+    {
+        return view('task26form');
+    }
+
+    public function storeFlash(Request $request){
+        $request->validate([
+            'name'=>'required|min:3|max:100',
+            'description'=>'required|min:5',
+        ]);
+
+        session()->flash('success','Task "'.$request->name.'" Added Successfully"');
+
+        return redirect()->back();
+    }
 }
