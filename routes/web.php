@@ -11,6 +11,10 @@ Route::get("/task/{name}/{priority}",function($name,$priority){
     return 'Task:'.$name.' Priority:'.$priority;
 });
 
+Route::get("/tasklist",function(){
+    return view('taskList');
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
