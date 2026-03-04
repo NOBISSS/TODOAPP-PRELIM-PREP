@@ -6,6 +6,7 @@
 
 @section('content')
 
+
     {{-- Show which controller handled this --}}
     <div style="
         background:#dbeafe;

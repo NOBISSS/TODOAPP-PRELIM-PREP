@@ -198,6 +198,12 @@ Route::get('/task24',function(){
 
 Route::post('/task24/store',[TaskController::class,'store']);
 
+//TASK 25 -Show Form
+Route::get('/task25',[TaskController::class,'create']);
+
+Route::post('/task25/store',[TaskController::class,'storeValidated']);
+
+
 Route::get('/', function () {
     return view('welcome');
 });
