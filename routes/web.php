@@ -94,6 +94,13 @@ Route::get("/switchtask",function(){
     return view('switchtask',compact('tasks'));
 });
 
+
+//TASK 13 @for loop to generate 5 Sample Task
+
+Route::get('/fortask',function(){
+    return view('fortask');
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
