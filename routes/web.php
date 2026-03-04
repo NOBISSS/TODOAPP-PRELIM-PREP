@@ -106,6 +106,17 @@ Route::get('/multiply/{number}',function($number){
     return view('multiply',compact('number'));
 });
 
+//TASK 15 - Factorial Calculation from Route
+
+Route::get('/factorial/{number}',function($number){
+    $factorial=1;
+    for($i=1;$i<=$number;$i++){
+        $factorial=$factorial*$i;
+    }
+
+    return view('factorial',compact('number','factorial'));
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
