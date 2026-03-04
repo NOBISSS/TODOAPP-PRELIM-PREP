@@ -17,9 +17,9 @@ Route::get("/task/{name}/{priority}",function($name,$priority){
 
 Route::get("/tasklist",function(){
     $tasks=[
-        "Buy Milk",
-        "Do Homework",
-        "Learn Laravel",
+        ['title'=>'Buy Milk', 'status'=>'completed'],
+        ['title'=>'Do Homework', 'status'=>'pending'],
+        ['title'=>'Learn Laravel', 'status'=>'completed'],
     ];
     return view('taskList',compact('tasks'));
 });
