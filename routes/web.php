@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
+use App\Http\Controllers\TaskController;
 
 //Task 1 - Dynamic Route With Single Parameter
 Route::get("/task/{name}",function($name){
@@ -177,16 +179,24 @@ Route::get('/colorpage/{color}',function($color){
     return view('colorpage',compact('color'));
 });
 
-//TASK 23 - Route 1:Showing the FORM (GET)
+//TASK 23(A) - Route 1:Showing the FORM (GET)
 Route::get("/task-form",function(){
     return view('taskform');
 });
 
-Route::post('/task-store',function(Illuminate\Http\Request $request){
+//TASK 23(B) -DISPLAY TASK IN PAGE
+Route::post('/task-store',function(Request $request){
     $title=$request->input('title');
     $description=$request->input('description');
     return view('taskresult',compact('title','description'));
 });
+
+//TASK 24 - Route 1:Show form(GET)
+Route::get('/task24',function(){
+    return view('task24form');
+});
+
+Route::post('/task24/store',[TaskController::class,'store']);
 
 Route::get('/', function () {
     return view('welcome');
