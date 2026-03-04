@@ -101,6 +101,11 @@ Route::get('/fortask',function(){
     return view('fortask');
 });
 
+//TASK 14 Multiplication
+Route::get('/multiply/{number}',function($number){
+    return view('multiply',compact('number'));
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
