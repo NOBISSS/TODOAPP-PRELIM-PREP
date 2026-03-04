@@ -82,6 +82,18 @@ Route::get('/taskswithout',function(){
     return view('unless',compact('tasks'));
 });
 
+//TASK 12 - @switch based on task status
+
+Route::get("/switchtask",function(){
+    $tasks=[
+        ['title'=>'Buy Milk', 'status'=>'completed'],
+        ['title'=>'Do Homework', 'status'=>'pending'],
+        ['title'=>'Learn Laravel', 'status'=>'completed'],
+        ['title'=>'DO BICEPS', 'status'=>''],
+    ];
+    return view('switchtask',compact('tasks'));
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
