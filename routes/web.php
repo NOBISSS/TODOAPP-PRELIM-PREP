@@ -24,6 +24,18 @@ Route::get('/dynamic/{value}',function($value){
     return view('dynamic')->with('value',$value);
 });
 
+//TASK 5
+Route::get('/multivars',function(){
+    $name="Parth Chauhan";
+    $course="BCA";
+    $sem="6";
+    return view('multivars')->with([
+        'name'=>$name,
+        'course'=>$course,
+        'sem'=>$sem
+    ]);
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
