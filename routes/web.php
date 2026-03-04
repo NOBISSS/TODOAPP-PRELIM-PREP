@@ -36,6 +36,31 @@ Route::get('/multivars',function(){
     ]);
 });
 
+//TASK 6- USING COMPACT METHOD
+Route::get('/compactmethod',function(){
+    $name="Raj Patel";
+    $city="Surat";
+    $course="BCA";
+    $method="Compact()";
+
+    return view('compactwith',compact('name','city','course','method'));
+});
+
+//TASK 6- USING WITH METHOD
+Route::get('/withmethod',function(){
+    $name="Raj Patel";
+    $city="Surat";
+    $course="BCA";
+    $method="With()";
+
+    return view('compactwith')->with([
+        'name'=>$name,
+        'city'=>$city,
+        'course'=>$course,
+        'method'=>$method,
+    ]);
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
