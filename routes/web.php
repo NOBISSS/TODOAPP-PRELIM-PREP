@@ -122,6 +122,20 @@ Route::get('/checknumber/{number}',function($number){
     return view('checknumber',compact('number'));
 });
 
+//TASK 17 - Array of 5 Elements Displayed With @foreach
+
+Route::get('/arraylist',function(){
+    $fruits=['Mango','Apple','Banana'];
+
+    $students=[
+        ['name'=>'Raj Patel','city'=>'Surat','grade'=>'A'],
+        ['name'=>'Nisha Modi','city'=>'Ahmedabad','grade'=>'B'],
+        ['name'=>'Meet Desai','city'=>'Vadodara','grade'=>'A'],
+    ];
+
+    return view('arraylist',compact('fruits','students'));
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
