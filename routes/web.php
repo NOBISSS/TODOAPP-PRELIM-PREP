@@ -171,6 +171,12 @@ Route::get('/calculate/{num1}/{operator}/{num2}',function($num1,$operator,$num2)
     return view('calculate',compact('num1','operator','num2','result'));
 });
 
+//TASK 22 - Dynamic Page Color From Route
+Route::get('/colorpage/{color}',function($color){
+    //$color = 'bg-' . $color . '-500';
+    return view('colorpage',compact('color'));
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
