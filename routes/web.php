@@ -157,6 +157,20 @@ Route::get('/oddeven/{number}',function($number){
     return view('oddeven',compact('number'));
 });
 
+//TASK 21 - Arithmetic Operations with @switch
+Route::get('/calculate/{num1}/{operator}/{num2}',function($num1,$operator,$num2){
+    $result=0;
+    switch($operator){
+        case '+':$result=$num1+$num2;break;
+        case '-':$result=$num1-$num2;break;
+        case '*':$result=$num1*$num2;break;
+        case '/':$result=$num1/$num2;break;
+        default:$result="Invalid Operator!";
+    }
+
+    return view('calculate',compact('num1','operator','num2','result'));
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
