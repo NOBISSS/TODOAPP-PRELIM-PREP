@@ -152,6 +152,11 @@ Route::get('/sumten',function(){
     return view('sumten',compact('sum','numbers'));
 });
 
+//Task 20 - Odd or Even Check
+Route::get('/oddeven/{number}',function($number){
+    return view('oddeven',compact('number'));
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
