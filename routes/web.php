@@ -117,6 +117,11 @@ Route::get('/factorial/{number}',function($number){
     return view('factorial',compact('number','factorial'));
 });
 
+//TASK 16 Check Positive,negative or zero from route
+Route::get('/checknumber/{number}',function($number){
+    return view('checknumber',compact('number'));
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
