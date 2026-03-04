@@ -66,6 +66,22 @@ Route::get('/withmethod',function(){
     ]);
 });
 
+//TASK 11a- With Tasks(unless won't trigger)
+Route::get('/taskswith',function(){
+    $tasks=[
+        ['title'=>'Buy Milk', 'status'=>'completed'],
+        ['title'=>'Do Homework', 'status'=>'pending'],
+        ['title'=>'Learn Laravel', 'status'=>'completed'],
+    ];
+    return view('unless',compact('tasks'));
+});
+
+//TASK 11b- Empty Tasks(unless WILL trigger)
+Route::get('/taskswithout',function(){
+    $tasks=[];
+    return view('unless',compact('tasks'));
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
