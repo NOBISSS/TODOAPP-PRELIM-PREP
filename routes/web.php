@@ -7,6 +7,10 @@ Route::get("/task/{name}",function($name){
      return 'Task name is: '. $name;
 });
 
+Route::get("/task/{name}/{priority}",function($name,$priority){
+    return 'Task:'.$name.' Priority:'.$priority;
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
