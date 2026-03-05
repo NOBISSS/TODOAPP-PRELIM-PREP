@@ -213,6 +213,14 @@ Route::get('/task27',[FormController::class,'create']);
 
 Route::post('/task27/store',[FormController::class,'store']);
 
+//Task 28 - index() and storeTask() with named Routes
+
+Route::get('/task28',[TaskController::class,'index'])->name('tasks.index');
+
+Route::post('/task28/store',[TaskController::class,'storeTask'])->name('tasks.store');
+
+
+
 Route::get('/', function () {
     return view('welcome');
 });

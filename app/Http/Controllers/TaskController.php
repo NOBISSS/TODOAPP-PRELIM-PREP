@@ -47,4 +47,27 @@ class TaskController extends Controller
 
         return redirect()->back();
     }
+
+    public function index(){
+        $tasks=session()->get('tasks',[]);//default = empty array
+        return view('task28',compact('tasks'));
+    }
+
+    public function storeTask(Request $request){
+        $request->validate([
+            'title'=>'required|min:3',
+            'status'=>'required',
+        ]);
+
+        $tasks=session()->get('tasks',[]);
+
+        $tasks[]=[
+            'title'=>$request->input('title'),
+            'status'=>$request->input('status'),
+        ];//pushses new item to the end of array
+
+        session()->put('tasks',$tasks);
+
+        return redirect()->route('tasks.index')->with('success','Task Added Successfully');
+    }
 }
