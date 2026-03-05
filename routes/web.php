@@ -6,6 +6,9 @@ use App\Http\Controllers\TaskController;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\TaskDBController;
+
+Route::resource('tasks',TaskDBController::class);
 
 //Task 1 - Dynamic Route With Single Parameter
 Route::get("/task/{name}",function($name){
