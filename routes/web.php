@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\FormController;
+use App\Http\Controllers\StudentController;
 
 //Task 1 - Dynamic Route With Single Parameter
 Route::get("/task/{name}",function($name){
@@ -218,6 +219,10 @@ Route::post('/task27/store',[FormController::class,'store']);
 Route::get('/task28',[TaskController::class,'index'])->name('tasks.index');
 
 Route::post('/task28/store',[TaskController::class,'storeTask'])->name('tasks.store');
+
+//Task 29
+Route::get('/task29',[StudentController::class,'create'])->name('student.create');
+Route::post('/task29/store',[StudentController::class,'store'])->name('student.store');
 
 
 
