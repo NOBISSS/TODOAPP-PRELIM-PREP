@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Http\Controllers\TaskController;
+use App\Http\Controllers\FormController;
 
 //Task 1 - Dynamic Route With Single Parameter
 Route::get("/task/{name}",function($name){
@@ -207,6 +208,10 @@ Route::post('/task25/store',[TaskController::class,'storeValidated']);
 Route::get('/task26',[TaskController::class,'showFlashForm']);
 Route::post('/task26/store',[TaskController::class,'storeFlash']);
 
+//TASK 27 - FormController routes
+Route::get('/task27',[FormController::class,'create']);
+
+Route::post('/task27/store',[FormController::class,'store']);
 
 Route::get('/', function () {
     return view('welcome');
